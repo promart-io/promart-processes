@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef">
+  <process id="myprocess" name="MyProcess" isExecutable="true">
+    <startEvent id="sid-3334E861-7999-4B89-B8B0-11724BA17A3E"/>
+    <endEvent id="sid-70B488C1-384A-4E19-8091-1B12D1AEC7FD"/>
+    <userTask id="sayHello" name="Open Vendor Cockpit"/>
+    <sequenceFlow id="sid-797626AE-B2F6-4C00-ABEE-FB30ADC177E4" sourceRef="sid-3334E861-7999-4B89-B8B0-11724BA17A3E" targetRef="sayHello"/>
+    <userTask id="sayHello" name="Add New Cluster (K8s)"/>
+    <sequenceFlow id="sid-69A3A498-C0C5-4B29-B8CB-4C4B4A2908D9" sourceRef="sayHello" targetRef="sayHello"/>
+    <userTask id="sayHello" name="Set the Availability Zone and Other Tags"/>
+    <sequenceFlow id="sid-6A4D0782-5F86-42AC-8F6B-B66A1A981CCE" sourceRef="sayHello" targetRef="sayHello"/>
+    <serviceTask id="sayHello" name="Setup ProMART Components" flowable:class="org.eclipse.dirigible.bpm.flowable.DirigibleCallDelegate">
+      <extensionElements>
+        <flowable:field name="handler">
+          <flowable:string><![CDATA[myproject/mydelegate.js]]></flowable:string>
+        </flowable:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="sid-100963FD-B635-47EB-91E4-C1E7BB064260" sourceRef="sayHello" targetRef="sayHello"/>
+    <sequenceFlow id="sid-F2E99337-E57F-40BB-A9A4-30AAE22194B8" sourceRef="sayHello" targetRef="sid-70B488C1-384A-4E19-8091-1B12D1AEC7FD"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_myprocess">
+    <bpmndi:BPMNPlane bpmnElement="myprocess" id="BPMNPlane_myprocess">
+      <bpmndi:BPMNShape bpmnElement="sid-3334E861-7999-4B89-B8B0-11724BA17A3E" id="BPMNShape_sid-3334E861-7999-4B89-B8B0-11724BA17A3E">
+        <omgdc:Bounds height="30.0" width="30.0" x="195.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-70B488C1-384A-4E19-8091-1B12D1AEC7FD" id="BPMNShape_sid-70B488C1-384A-4E19-8091-1B12D1AEC7FD">
+        <omgdc:Bounds height="28.0" width="28.0" x="694.0" y="315.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sayHello" id="BPMNShape_sayHello">
+        <omgdc:Bounds height="64.0" width="125.0" x="645.0" y="195.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-797626AE-B2F6-4C00-ABEE-FB30ADC177E4" id="BPMNEdge_sid-797626AE-B2F6-4C00-ABEE-FB30ADC177E4">
+        <omgdi:waypoint x="224.41452867213007" y="96.97854522275746"/>
+        <omgdi:waypoint x="645.0" y="213.0617919670443"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-100963FD-B635-47EB-91E4-C1E7BB064260" id="BPMNEdge_sid-100963FD-B635-47EB-91E4-C1E7BB064260">
+        <omgdi:waypoint x="723.0" y="227.5"/>
+        <omgdi:waypoint x="707.5" y="227.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-F2E99337-E57F-40BB-A9A4-30AAE22194B8" id="BPMNEdge_sid-F2E99337-E57F-40BB-A9A4-30AAE22194B8">
+        <omgdi:waypoint x="707.6566176470589" y="258.95"/>
+        <omgdi:waypoint x="707.9311196640067" y="315.00002456440933"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-6A4D0782-5F86-42AC-8F6B-B66A1A981CCE" id="BPMNEdge_sid-6A4D0782-5F86-42AC-8F6B-B66A1A981CCE">
+        <omgdi:waypoint x="695.5" y="227.0"/>
+        <omgdi:waypoint x="723.0" y="227.5"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-69A3A498-C0C5-4B29-B8CB-4C4B4A2908D9" id="BPMNEdge_sid-69A3A498-C0C5-4B29-B8CB-4C4B4A2908D9">
+        <omgdi:waypoint x="695.5" y="227.0"/>
+        <omgdi:waypoint x="695.5" y="227.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

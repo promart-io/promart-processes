@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef">
+  <process id="myprocess" name="MyProcess" isExecutable="true">
+    <startEvent id="sid-FB8D8E84-4C20-49D5-828B-0DD934CDAC8B" isInterrupting="false">
+      <timerEventDefinition/>
+    </startEvent>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_myprocess">
+    <bpmndi:BPMNPlane bpmnElement="myprocess" id="BPMNPlane_myprocess">
+      <bpmndi:BPMNShape bpmnElement="sid-FB8D8E84-4C20-49D5-828B-0DD934CDAC8B" id="BPMNShape_sid-FB8D8E84-4C20-49D5-828B-0DD934CDAC8B">
+        <omgdc:Bounds height="31.0" width="31.0" x="144.9545566070176" y="79.04545574739942"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
